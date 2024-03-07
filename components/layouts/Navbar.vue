@@ -22,11 +22,10 @@ const isActive = (path: string) => path === route.path;
         :key="index"
         :class="{ 'text-primary dark:text-primary': isActive(path.to) }"
         class="flex flex-col items-center gap-1"
+        @click="navigateTo(path.to)"
       >
         <UIcon :name="path.icon" />
-        <ULink :to="path.to" class="text-sm font-semibold">{{
-          path.label
-        }}</ULink>
+        <div :to="path.to" class="text-sm font-semibold">{{ path.label }}</div>
       </li>
     </ul>
   </nav>
