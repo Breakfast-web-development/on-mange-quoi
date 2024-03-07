@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
 
 <template>
   <header
-    class="bg-black px-4 py-2 flex justify-between items-center border-b-1"
+    class="bg-white dark:bg-stone-700 black px-4 py-2 flex justify-between items-center border-b-1"
     :class="[
       'transition ease-linear duration-700 border-gray-900 bg-gray-50 flex border-b w-full fixed z-50',
       visible
