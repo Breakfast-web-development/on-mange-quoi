@@ -1,3 +1,1 @@
-<template>
-    Planning
-</template>
+<template><div>Planning</div></template>

@@ -1,3 +1,1 @@
-<template>
-    Shopping
-</template>
+<template><div>Shopping</div></template>

@@ -1,3 +1,1 @@
-<template>
-    Recipe
-</template>
+<template><div>Planning</div></template>
