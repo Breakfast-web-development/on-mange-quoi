@@ -21,7 +21,7 @@ const isActive = (path: string) => path === route.path;
         v-for="(path, index) in routes"
         :key="index"
         :class="{ 'text-primary dark:text-primary': isActive(path.to) }"
-        class="flex flex-col items-center gap-1"
+        class="flex flex-col items-center gap-1 cursor-pointer"
         @click="navigateTo(path.to)"
       >
         <UIcon :name="path.icon" />
