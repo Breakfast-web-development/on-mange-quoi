@@ -9,9 +9,4 @@ export default defineNuxtConfig({
       exclude: ["/register", "/login", "/confirm"],
     },
   },
-  runtimeConfig: {
-    public: {
-      baseURL: process.env.BASE_URL || "http://localhost:3000",
-    },
-  },
 });

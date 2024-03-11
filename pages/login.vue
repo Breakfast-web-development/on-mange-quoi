@@ -32,9 +32,6 @@ const signInWithPassword = async () => {
 const signInWithGoogle = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: {
-      redirectTo: config.public.baseURL + "/",
-    },
   });
   if (error) console.log(error);
 };
