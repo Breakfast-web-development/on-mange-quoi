@@ -4,7 +4,6 @@ import type { FormError } from "#ui/types";
 definePageMeta({
   layout: "layout-without-navbar",
 });
-
 const config = useRuntimeConfig();
 
 const supabase = useSupabaseClient();
@@ -33,15 +32,8 @@ const signInWithGoogle = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: window.location.hostname + "/",
+      redirectTo: config.public.BASE_URL + "/",
     },
-  });
-  if (error) console.log(error);
-};
-
-const signInWithOtp = async () => {
-  const { error } = await supabase.auth.signInWithOtp({
-    phone: "",
   });
   if (error) console.log(error);
 };
@@ -97,7 +89,6 @@ const handleSubmitCredentials = async () => {
           icon="i-heroicons-device-phone-mobile"
           block
           disabled
-          @click="signInWithOtp"
         />
         <UButton
           label="Se connecter avec Discord"

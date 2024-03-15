@@ -9,4 +9,9 @@ export default defineNuxtConfig({
       exclude: ["/register", "/login", "/confirm"],
     },
   },
+  runtimeConfig: {
+    public: {
+      BASE_URL: process.env.BASE_URL,
+    },
+  },
 });
