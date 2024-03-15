@@ -40,8 +40,10 @@ const signInWithGoogle = async () => {
 
 const validate = (state: any): FormError[] => {
   const errors = [];
-  if (!state.email) errors.push({ path: "email", message: "Requis" });
-  if (!state.password) errors.push({ path: "password", message: "Requis" });
+  if (!state.email)
+    errors.push({ path: "email", message: "Ce champ est requis" });
+  if (!state.password)
+    errors.push({ path: "password", message: "Ce champ est requis" });
   return errors;
 };
 

@@ -23,11 +23,14 @@ const isValidEmail = (email: string) => {
 const validate = (state: any) => {
   const errors = [];
   // Required fields
-  if (!state.email) errors.push({ path: "email", message: "Requis" });
-  if (!state.password) errors.push({ path: "password", message: "Requis" });
+  if (!state.email)
+    errors.push({ path: "email", message: "Ce champ est requis" });
+  if (!state.password)
+    errors.push({ path: "password", message: "RCe champ est requisequis" });
   if (!state.confirmPassword)
-    errors.push({ path: "confirmPassword", message: "Requis" });
-  if (!state.userName) errors.push({ path: "userName", message: "Requis" });
+    errors.push({ path: "confirmPassword", message: "Ce champ est requis" });
+  if (!state.userName)
+    errors.push({ path: "userName", message: "Ce champ est requis" });
 
   // Rules specific
   if (state.password !== state.confirmPassword)
@@ -51,12 +54,20 @@ const handleSignUp = async () => {
     },
   });
 
-  toast.add({
-    title: "Inscription",
-    description: error
-      ? "Erreur lors de l'inscription"
-      : "Un email de confirmation vous a été envoyé",
-  });
+  if (error)
+    toast.add({
+      title: "Inscription",
+      description: "Erreur lors de l'inscription",
+    });
+  else {
+    toast.add({
+      title: "Inscription",
+      description: "Un email de confirmation vous a été envoyé",
+    });
+    localStorage.setItem("email", newUser.value.email);
+
+    navigateTo("/confirm");
+  }
 };
 </script>
 <template>
